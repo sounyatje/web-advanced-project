@@ -168,6 +168,14 @@ height: 200px;
  
 }
 
+.links .item:hover {
+  background: red;
+}
+
+.links .item.active {
+  background:darkred;
+}
+
 .rechts {
   flex: 1;
   display: flex;
