@@ -88,6 +88,7 @@ flex-direction: row;
   height: 75%;
   justify-content: center;
   align-items: center; 
+   text-align: center;
   color: whitesmoke;
 
 }
@@ -98,6 +99,7 @@ input::placeholder {
   letter-spacing: 1px;
    text-align: center;
    font-style: italic;
+  
 }
 
 
@@ -178,7 +180,16 @@ height: 200px;
   flex: 1;
   background-image: url(./src/images/bg.jpg);
   background-size: cover;
-  position: relative; /* belangrijk! */
+  position: relative; 
+  align-content: center;
+}
+
+.image-container{
+  background-color: aqua;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  
 }
 
 .character-img {
