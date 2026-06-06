@@ -15,7 +15,7 @@ body {
 .top-bar {
   height: 50px;
   width: 100%;
-  background-color: violet;
+  background-color:#0a0a0a;
   border-bottom: 1px solid whitesmoke;
   display: flex;
  align-items: center;
@@ -70,7 +70,7 @@ body {
 
 .links .top {
   height: 50px;
-  background: red;
+  background:#0a0a0a;
 border: 1px solid whitesmoke;
 display: flex; 
 flex-direction: row;
@@ -88,6 +88,7 @@ flex-direction: row;
   height: 75%;
   justify-content: center;
   align-items: center; 
+  color: whitesmoke;
 
 }
 
@@ -124,6 +125,10 @@ input::placeholder {
 
 }
 
+.regiment button:hover{
+  background-color: red;
+}
+
 .badge {
  
   color: white;
@@ -137,19 +142,27 @@ input::placeholder {
     height: 40px;
 }
 
+.item:hover {
+  background-color: red;
+}
 
-.links .item:nth-child(2) { background: red; flex: none; height: 50px; display: flex; flex-direction: row; justify-content: center; align-items: center;}
-.links .item:nth-child(3) { background: red; }
-.links .item:nth-child(4) { background: red; }
-.links .item:nth-child(5) { background: red; }
-.links .item:nth-child(6) { background: red; }
-.links .item:nth-child(7) { background: red; }
-.links .item:nth-child(8) { background: red; }
-.links .item:nth-child(9) { background: red; }
+.item.active {
+background-color: crimson;
+}
+
+
+.links .item:nth-child(2) { background:#0a0a0a; flex: none; height: 50px; display: flex; flex-direction: row; justify-content: center; align-items: center;}
+.links .item:nth-child(3) { background:#0a0a0a }
+.links .item:nth-child(4) { background:#0a0a0a }
+.links .item:nth-child(5) { background:#0a0a0a }
+.links .item:nth-child(6) { background:#0a0a0a }
+.links .item:nth-child(7) { background:#0a0a0a}
+.links .item:nth-child(8) { background:#0a0a0a }
+.links .item:nth-child(9) { background:#0a0a0a}
 .links .last {
 height: 200px;
   flex: none;
-  background:greenyellow;
+  background:#0a0a0a
  
 }
 
@@ -159,9 +172,53 @@ height: 200px;
   flex-direction: column;
 }
 
-.rechts .main {
+
+
+.main {
   flex: 1;
-  background-image: url(./images/bg.jpg);
+  background-image: url(./src/images/bg.jpg);
+  background-size: cover;
+  position: relative; /* belangrijk! */
+}
+
+.character-img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.character-img img {
+  width: 150px;
+  opacity: 0.7;
+  
+}
+
+.character-info {
+  position: absolute;
+  bottom: 20px;
+  left: 150px;
+}
+
+.character-name {
+  color: white;
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.character-desc {
+  color: #888;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.arrows {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  
 }
 
 .bottom-bar {
@@ -175,11 +232,11 @@ height: 200px;
   border: 1px solid whitesmoke;
 }
 
-.bottom-bar .blok:nth-child(1) { background: pink; }
-.bottom-bar .blok:nth-child(2) { background: pink; }
-.bottom-bar .blok:nth-child(3) { background: pink; }
-.bottom-bar .blok:nth-child(4) { background: pink; }
-.bottom-bar .blok:nth-child(5) { background: pink; border-right: none; }
+.bottom-bar .blok:nth-child(1) { background:#0a0a0a }
+.bottom-bar .blok:nth-child(2) { background:#0a0a0a}
+.bottom-bar .blok:nth-child(3) { background:#0a0a0a }
+.bottom-bar .blok:nth-child(4) { background:#0a0a0a }
+.bottom-bar .blok:nth-child(5) { background:#0a0a0a; border-right: none; }
 
 .bottom-bar .blok {
   flex: 1;
