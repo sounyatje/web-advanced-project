@@ -82,11 +82,21 @@ flex-direction: row;
 .links .top input {
 
   border: 1px solid whitesmoke;
-  color: white;
+  background-color:#0a0a0a;
   outline: none;
   width: 80%;
   height: 75%;
+  justify-content: center;
+  align-items: center; 
 
+}
+
+input::placeholder {
+  color: whitesmoke;
+  font-size: 13px;
+  letter-spacing: 1px;
+   text-align: center;
+   font-style: italic;
 }
 
 
@@ -95,6 +105,8 @@ flex-direction: row;
   display: flex;
   gap: 10px;
   padding: 10px;
+  justify-content: center;
+  align-items: center; 
 }
 
 .regiment button {
@@ -105,6 +117,18 @@ flex-direction: row;
   border: 1px solid whitesmoke;
   background-color: #0a0a0a;
   color: whitesmoke;
+  text-align: center;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.badge {
+ 
+  color: white;
+  padding: 2px 6px;
+  font-size: 11px;
 }
 
 .links .item {
@@ -113,7 +137,8 @@ flex-direction: row;
     height: 40px;
 }
 
-.links .item:nth-child(2) { background: red; background: red; flex: none; height: 50px; display: flex; flex-direction: row; justify-content: center; align-items: center;}
+
+.links .item:nth-child(2) { background: red; flex: none; height: 50px; display: flex; flex-direction: row; justify-content: center; align-items: center;}
 .links .item:nth-child(3) { background: red; }
 .links .item:nth-child(4) { background: red; }
 .links .item:nth-child(5) { background: red; }
@@ -155,3 +180,28 @@ height: 200px;
 .bottom-bar .blok:nth-child(3) { background: pink; }
 .bottom-bar .blok:nth-child(4) { background: pink; }
 .bottom-bar .blok:nth-child(5) { background: pink; border-right: none; }
+
+.bottom-bar .blok {
+  flex: 1;
+  border: 1px solid whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  padding: 10px;
+  gap: 6px;
+}
+
+.bottom-bar .label {
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.bottom-bar .value {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
