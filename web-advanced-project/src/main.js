@@ -2,6 +2,3 @@
 
 import './style.scss'
 
-document.querySelector('#app').innerHTML = `
-  <h1>Attach on titan API</h1>
-`
