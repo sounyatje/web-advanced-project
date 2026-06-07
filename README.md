@@ -13,6 +13,7 @@ Een interactieve single-page webapplicatie gebouwd met Vite, HTML, SCSS en JavaS
 
 ### Nog te doen
 
+- filter werkt nog niet op de correcte manier
 - Favorieten opslaan via LocalStorage
 - Favorieten filter laten werken
 - Sorteerfunctie toevoegen
