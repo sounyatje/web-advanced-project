@@ -1,6 +1,7 @@
 //https://www.w3schools.com/
 //https://developer.mozilla.org/en-US/
 //https://codepen.io/
+//https://api.attackontitanapi.com/characters
 
 import './style.scss'
 
