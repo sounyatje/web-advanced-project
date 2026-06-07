@@ -102,6 +102,20 @@ input::placeholder {
   
 }
 
+#search-button{
+  border: none;
+   width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+
+#search-button:hover{background-color: red;}
+
+#search-button img {
+ 
+  background-color: #0a0a0a;
+  
+}
 
 
 .regiment {
