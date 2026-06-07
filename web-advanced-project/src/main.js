@@ -64,3 +64,20 @@ searchImg.addEventListener('mouseleave', () => {
 fetch('https://api.attackontitanapi.com/characters')
   .then(response => response.json())
   .then(data => console.log(data))
+
+  fetch('https://api.attackontitanapi.com/characters')
+  .then(response => response.json())
+  .then(data => {
+    let last = document.querySelector('.links .last')
+    
+    data.results.forEach(character => {
+      let item = document.createElement('div')
+      item.classList.add('item')
+      item.innerHTML = `
+        <p class="item-name">${character.name}</p>
+     <p class="item-affiliation"> ${character.groups[0]?.name ?? character.occupation ?? 'Onbekend'}
+  ${character.roles[0] ? `· ${character.roles[0]}` : ''}</p>
+      `
+      last.before(item) 
+    })
+  })

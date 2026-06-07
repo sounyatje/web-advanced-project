@@ -156,10 +156,25 @@ input::placeholder {
   flex: 1;
     border: 1px solid whitesmoke;
     height: 40px;
+    display: flex;
+    gap:10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .item:hover {
   background-color: red;
+}
+
+.item-name{
+color: whitesmoke;
+
+}
+
+.item-affiliation{
+  color: whitesmoke;
+  text-align: center;
 }
 
 .item.active {
