@@ -1,3 +1,7 @@
+//https://www.w3schools.com/
+//https://developer.mozilla.org/en-US/
+//https://codepen.io/
+
 import './style.scss'
 
 
@@ -36,7 +40,6 @@ function fillBottomBar(character) {
 }
 
 
-
 fetch('https://api.attackontitanapi.com/characters')
   .then(response => response.json())
   .then(data => {
@@ -47,7 +50,7 @@ fetch('https://api.attackontitanapi.com/characters')
       item.classList.add('item')
       item.innerHTML = `
         <p class="item-name">${character.name}</p>
-        <p class="item-affiliation">${character.groups[0]?.name ?? character.occupation ?? 'Unknown'}</p>
+     <p class="item-affiliation">${character.groups.length > 0 ? character.groups[0].name : character.roles[0] ?? character.occupation ?? 'Unknown'}</p>
       `
       item.addEventListener('click', () => {
         document.querySelectorAll('.links .item').forEach(i => i.classList.remove('active'))
@@ -57,3 +60,49 @@ fetch('https://api.attackontitanapi.com/characters')
       last.before(item)
     })
   })
+
+  let allCharacters = []
+
+fetch('https://api.attackontitanapi.com/characters')
+  .then(response => response.json())
+  .then(data => {
+    allCharacters = data.results
+    renderItems(allCharacters)
+  })
+
+function renderItems(characters) {
+  document.querySelectorAll('.links .item:not(:first-child):not(:nth-child(2))').forEach(i => i.remove())
+  let last = document.querySelector('.links .last')
+  
+  characters.forEach(character => {
+    let item = document.createElement('div')
+    item.classList.add('item')
+    item.innerHTML = `
+      <p class="item-name">${character.name}</p>
+      <p class="item-affiliation">${character.groups[0]?.name ?? 'Unknown'}</p>
+    `
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.links .item').forEach(i => i.classList.remove('active'))
+      item.classList.add('active')
+      fillBottomBar(character)
+    })
+    last.before(item)
+  })
+}
+
+// filter knoppen ALTIJD NA renderItems
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    let filter = btn.dataset.filter
+
+    if (filter === 'all') {
+      renderItems(allCharacters)
+    } else if (filter === 'scout') {
+      renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Scout Regiment')))
+    } else if (filter === 'garrison') {
+      renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Garrison Regiment')))
+    } else if (filter === 'warrior') {
+      renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Warrior Unit')))
+    }
+  })
+})
