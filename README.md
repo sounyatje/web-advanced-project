@@ -57,7 +57,7 @@ npm run dev
 
 ## Screenshots
 
-*(toe te voegen)*
+*(nog toe te voegen)*
 
 ## Bronnen
 
