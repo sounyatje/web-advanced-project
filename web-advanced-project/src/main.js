@@ -81,3 +81,8 @@ fetch('https://api.attackontitanapi.com/characters')
       last.before(item) 
     })
   })
+
+document.querySelector('.bottom-bar .blok:nth-child(1) .value').textContent = character.groups[0]?.name ?? 'Unknown';
+document.querySelector('.bottom-bar .blok:nth-child(2) .value').textContent = character.occupation ?? 'Unknown';
+document.querySelector('.bottom-bar .blok:nth-child(3) .value').textContent = character.gender ?? 'Unknown';
+document.querySelector('.bottom-bar .blok:nth-child(4) .value').textContent = character.titans[0] ?? 'Unknown';
