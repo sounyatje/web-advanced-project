@@ -29,7 +29,7 @@ heartImg.addEventListener('click', () => {
 
 
 function fillBottomBar(character) {
- document.querySelector('.bottom-bar .blok:nth-child(1) .value').textContent = character.groups[0]?.name ?? character.roles[0] ?? 'Unknown'
+ document.querySelector('.bottom-bar .blok:nth-child(1) .value').textContent = character.groups[0]?.name + (character.groups[0]?.sub_groups[0] ? ' · ' + character.groups[0].sub_groups[0] : '')
   document.querySelector('.bottom-bar .blok:nth-child(2) .value').textContent = character.occupation ?? 'Unknown'
   document.querySelector('.bottom-bar .blok:nth-child(3) .value').textContent = character.gender ?? 'Unknown'
  document.querySelector('.bottom-bar .blok:nth-child(4) .value').textContent = character.alias[0] ?? 'Unknown'
