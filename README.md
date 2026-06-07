@@ -13,8 +13,6 @@ Een interactieve single-page webapplicatie gebouwd met Vite, HTML, SCSS en JavaS
 
 ### Nog te doen
 
-- werking pijlen javascript
-- farvoriet correct laten werken met javascript
 - Favorieten opslaan via LocalStorage
 - Favorieten filter laten werken
 - Sorteerfunctie toevoegen
