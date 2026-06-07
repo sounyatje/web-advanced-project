@@ -23,9 +23,9 @@
           </div>
         <div class="item">
           <div class="regiment">
-          <div><button>ALL</button></div>
-        <div><button>EXPLORATION</button></div>
-        <div><button>❤️ <span class="badge">0</span></button></div>
+          <div><button class="btn-filter" onclick="filterSelection('all')">ALL</button></div>
+        <div><button class="btn-filter" onclick="filterSelection('EXPLORATION')">EXPLORATION</button></div>
+        <div><button class="btn active" onclick="filterSelection('FAVOURITES')">❤️ <span class="badge">0</span></button></div>
         </div>
       </div>
         <div class="item"></div>
@@ -43,8 +43,8 @@
     <img src="./src/images/title.png" alt="characters">
   </div>
   <div class="character-info">
-    <h1 class="character-name">Eren Jäger</h1>
-    <p class="character-desc">FOUNDING TITAN BEARER</p>
+    <h1 class="character-name"></h1>
+    <p class="character-desc"></p>
   </div>
   <div class="arrows">
     <button class="arrow left"><img src="./src/images/controlBL.png" alt="prev"></button>

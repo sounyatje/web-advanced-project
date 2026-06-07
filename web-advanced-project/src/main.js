@@ -50,13 +50,17 @@ let searchbutton = document.getElementById('search-button');
         console.log("het werkt")
     });
 
-
-searchbutton.addEventListener('mousedown', () => {
+let searchImg = document.querySelector('#search-button img');
+searchImg.addEventListener('mousedown', () => {
   searchImg.src = './src/images/searchred.png';
 });
-searchbutton.addEventListener('mouseup', () => {
-  searchImg.src = './src/images/searchnormal.png'; 
+searchImg.addEventListener('mouseup', () => {
+  searchImg.src = './src/images/search.png'; 
 });
-searchbutton.addEventListener('mouseleave', () => {
-  searchImg.src = './src/images/searchnormal.png';
+searchImg.addEventListener('mouseleave', () => {
+  searchImg.src = './src/images/search.png';
 });
+
+fetch('https://api.attackontitanapi.com/characters')
+  .then(response => response.json())
+  .then(data => console.log(data))
