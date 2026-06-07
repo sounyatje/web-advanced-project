@@ -32,24 +32,6 @@ npm install
 npm run dev
 ```
 
-## Technische vereisten
-
-| Concept | Waar |
-|---|---|
-| DOM selectie | `document.querySelector`, `querySelectorAll` |
-| DOM manipulatie | `createElement`, `innerHTML`, `textContent` |
-| Events | `addEventListener` op items, knoppen, input |
-| Constanten | `const allCharacters`, `const leftOriginal` |
-| Template literals | `item.innerHTML = \`...\`` |
-| Array iteratie | `forEach` op characters en knoppen |
-| Array methodes | `filter`, `some`, `flatMap`, `map` |
-| Arrow functions | overal in de code |
-| Ternary operator | `character.groups.length > 0 ? ... : ...` |
-| Promises | `.then()` op fetch |
-| Fetch | `fetch('https://api.attackontitanapi.com/characters')` |
-| JSON | `response.json()` |
-| LocalStorage | nog te doen |
-
 ## Gebruikte bronnen
 
 - [Attack on Titan API](https://api.attackontitanapi.com)
@@ -58,6 +40,3 @@ npm run dev
 - [Vite docs](https://vitejs.dev)
 - [AI: Claude (Anthropic)](https://claude.ai/share/d53624e3-6765-4040-8135-9b5731b7ac5f)
 
-## Screenshots
-
-*binnenkort toegevoegd*
