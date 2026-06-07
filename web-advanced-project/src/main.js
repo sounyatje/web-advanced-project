@@ -19,6 +19,14 @@ searchImg.addEventListener('mousedown', () => { searchImg.src = './src/images/se
 searchImg.addEventListener('mouseup', () => { searchImg.src = './src/images/search.png' })
 searchImg.addEventListener('mouseleave', () => { searchImg.src = './src/images/search.png' })
 
+let heartImg = document.querySelector('.heart img')
+let isFilled = false
+
+heartImg.addEventListener('click', () => {
+  isFilled = !isFilled
+  heartImg.src = isFilled ? './src/images/heartfilled.png' : './src/images/emptyheart.png'
+})
+
 
 function fillBottomBar(character) {
  document.querySelector('.bottom-bar .blok:nth-child(1) .value').textContent = character.groups[0]?.name ?? character.roles[0] ?? 'Unknown'
