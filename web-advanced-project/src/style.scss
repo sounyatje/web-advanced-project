@@ -347,6 +347,13 @@ height: 200px;
     min-height: 300px;  
   }
 
+  .links {
+    width: 100%;
+    max-height: 60vh;
+    overflow-y: auto;   
+    flex-shrink: 0;     
+  }
+
    .links .last {
     height: 20px;       
   }
@@ -356,6 +363,15 @@ height: 200px;
       min-height: 0; 
   }
 
+.regiment {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .regiment button {
+    width: auto;
+    flex: 1 1 60px;
+  }
 
   .character-name {
     font-size: 28px;
@@ -381,5 +397,9 @@ height: 200px;
 
   .blok .label{
     font-size: 15px;
+  }
+  .arrow img{
+    width: 30px;
+    height: 50px;
   }
 }
