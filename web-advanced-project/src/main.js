@@ -125,3 +125,22 @@ document.getElementById('search').addEventListener('input', (e) => {
   })
 })
 
+let currentCharacter = null
+
+document.querySelector('.heart').addEventListener('click', () => {
+ if (!currentCharacter) return
+
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || []
+
+  if (favorites.includes(currentCharacter.id)) {
+    favorites = favorites.filter(id => id !== currentCharacter.id)
+    document.querySelector('.heart img').src = './src/images/emptyheart.png'
+  } else {
+    favorites.push(currentCharacter.id)
+    document.querySelector('.heart img').src = './src/images/heartfilled.png'
+  }
+
+  localStorage.setItem('favorites', JSON.stringify(favorites))
+  document.querySelector('.badge').textContent = favorites.length
+})
+
