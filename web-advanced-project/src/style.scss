@@ -343,4 +343,17 @@ height: 200px;
     height: auto;      
     overflow: visible;
   }
+   .main {
+    min-height: 300px;  
+  }
+
+   .bottom-bar {
+    height: auto;
+    flex-wrap: wrap;
+  }
+  
+   .bottom-bar .blok {
+    flex: 1 1 33%;
+    min-width: 100px;
+  }
 }
