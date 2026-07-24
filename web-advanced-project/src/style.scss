@@ -351,9 +351,13 @@ height: 200px;
     height: auto;
     flex-wrap: wrap;
   }
-  
+
    .bottom-bar .blok {
     flex: 1 1 33%;
     min-width: 100px;
+  }
+
+  .blok .label{
+    font-size: 15px;
   }
 }
