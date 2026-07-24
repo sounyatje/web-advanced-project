@@ -25,12 +25,8 @@ searchImg.addEventListener('mousedown', () => { searchImg.src = './src/images/se
 searchImg.addEventListener('mouseup', () => { searchImg.src = './src/images/search.png' })
 searchImg.addEventListener('mouseleave', () => { searchImg.src = './src/images/search.png' })
 
-let heartImg = document.querySelector('.heart img')
-let isFilled = false
-heartImg.addEventListener('click', () => {
-  isFilled = !isFilled
-  heartImg.src = isFilled ? './src/images/heartfilled.png' : './src/images/emptyheart.png'
-})
+
+let currentCharacter = null
 
 
 function fillBottomBar(character) {
@@ -43,9 +39,15 @@ function fillBottomBar(character) {
 
 function showCharacter(character) {
   currentCharacter = character
+
   document.querySelector('.image-container').innerHTML = `<img src="${character.img ?? ''}" alt="${character.name}" style="height:100%; object-fit:contain;">`
   document.querySelector('.character-name').textContent = character.name
   document.querySelector('.character-desc').textContent = character.roles[0] ?? character.occupation ?? ''
+
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || []
+  document.querySelector('.heart img').src = favorites.includes(character.id)
+    ? './src/images/heartfilled.png'
+    : './src/images/emptyheart.png'
 }
 
 
@@ -78,10 +80,13 @@ fetch('https://api.attackontitanapi.com/characters')
   .then(data => {
     allCharacters = data.results
     renderItems(allCharacters)
+
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || []
+    document.querySelector('.badge').textContent = favorites.length
   })
 
-  
-  let sortAscending = true
+
+let sortAscending = true
 let currentFilter = 'all'
 
 document.querySelector('.sort-btn').addEventListener('click', () => {
@@ -90,7 +95,8 @@ document.querySelector('.sort-btn').addEventListener('click', () => {
   let list = currentFilter === 'all' ? allCharacters
     : currentFilter === 'scout' ? allCharacters.filter(c => c.groups.some(g => g.name === 'Scout Regiment'))
     : currentFilter === 'garrison' ? allCharacters.filter(c => c.groups.some(g => g.name === 'Garrison Regiment'))
-    : allCharacters.filter(c => c.groups.some(g => g.name === 'Warrior Unit'))
+    : currentFilter === 'warrior' ? allCharacters.filter(c => c.groups.some(g => g.name === 'Warrior Unit'))
+    : allCharacters.filter(c => (JSON.parse(localStorage.getItem('favorites')) || []).includes(c.id))
 
   list.sort((a, b) => sortAscending
     ? a.name.localeCompare(b.name)
@@ -99,9 +105,12 @@ document.querySelector('.sort-btn').addEventListener('click', () => {
   renderItems(list)
 })
 
+
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     let filter = btn.dataset.filter
+    currentFilter = filter
+
     if (filter === 'all') {
       renderItems(allCharacters)
     } else if (filter === 'scout') {
@@ -110,6 +119,9 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
       renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Garrison Regiment')))
     } else if (filter === 'warrior') {
       renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Warrior Unit')))
+    } else if (filter === 'favourites') {
+      let favorites = JSON.parse(localStorage.getItem('favorites')) || []
+      renderItems(allCharacters.filter(c => favorites.includes(c.id)))
     }
   })
 })
@@ -125,10 +137,9 @@ document.getElementById('search').addEventListener('input', (e) => {
   })
 })
 
-let currentCharacter = null
 
 document.querySelector('.heart').addEventListener('click', () => {
- if (!currentCharacter) return
+  if (!currentCharacter) return
 
   let favorites = JSON.parse(localStorage.getItem('favorites')) || []
 
@@ -143,4 +154,3 @@ document.querySelector('.heart').addEventListener('click', () => {
   localStorage.setItem('favorites', JSON.stringify(favorites))
   document.querySelector('.badge').textContent = favorites.length
 })
-
