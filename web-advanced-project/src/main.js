@@ -81,8 +81,9 @@ fetch('https://api.attackontitanapi.com/characters')
 
   let sortAscending = true
 let currentFilter = 'all'
-document.querySelectorAll('.filter-btn').forEach(btn => {
+document.querySelectorAll('.sort-btn').addEventListener('click', () => {
   btn.addEventListener('click', () => {
+    sortAscending = !sortAscending
     let filter = btn.dataset.filter
     if (filter === 'all') {
       renderItems(allCharacters)
