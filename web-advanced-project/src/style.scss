@@ -347,6 +347,15 @@ height: 200px;
     min-height: 300px;  
   }
 
+   .links .last {
+    height: 20px;       
+  }
+
+  .rechts {
+    flex: 1;
+      min-height: 0; 
+  }
+
 
   .character-name {
     font-size: 28px;
