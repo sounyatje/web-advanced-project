@@ -70,6 +70,7 @@ function renderItems(characters) {
       <p class="item-affiliation">${regiment}</p>
       <p class="item-occupation">${occupation}</p>
       <p class="item-gender">${gender}</p>
+      <p class="item-status ${status.toLowerCase() === 'deceased' ? 'deceased' : ''}">${status}</p>
       <p class="item-species">${species}</p>
     `
     item.addEventListener('click', () => {
