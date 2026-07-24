@@ -341,7 +341,7 @@ height: 200px;
 .bottom-bar .blok:nth-child(2) { background:#0a0a0a}
 .bottom-bar .blok:nth-child(3) { background:#0a0a0a }
 .bottom-bar .blok:nth-child(4) { background:#0a0a0a }
-.bottom-bar .blok:nth-child(5) { background:#0a0a0a; border-right: none; }
+.bottom-bar .blok:nth-child(5) { background:#0a0a0a }
 
 .bottom-bar .blok {
   flex: 1;
@@ -379,8 +379,10 @@ height: 200px;
 }
 
 @media (max-width: 768px) {
+
 body{
-align-items: center;}
+align-items: center;
+padding-bottom: 10px;}
   .logo-text{
     display: flex;
     flex-wrap: wrap;
@@ -390,7 +392,7 @@ align-items: center;}
    width: 30px;
    height:15px;
   }
-  
+
   .logo-title{display: flex; font-size: 15px;}
   .logo-sub{display: flex; font-size: 10px;}
   .container {
