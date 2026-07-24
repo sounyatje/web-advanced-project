@@ -79,12 +79,20 @@ fetch('https://api.attackontitanapi.com/characters')
     renderItems(allCharacters)
   })
 
-  let sortAscending = true
-let currentFilter = 'all'
-document.querySelectorAll('.sort-btn').addEventListener('click', () => {
+  
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    sortAscending = !sortAscending
-    
+    let filter = btn.dataset.filter
+    if (filter === 'all') {
+      renderItems(allCharacters)
+    } else if (filter === 'scout') {
+      renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Scout Regiment')))
+    } else if (filter === 'garrison') {
+      renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Garrison Regiment')))
+    } else if (filter === 'warrior') {
+      renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Warrior Unit')))
+    }
   })
 })
 
