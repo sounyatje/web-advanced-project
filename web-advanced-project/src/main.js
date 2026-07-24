@@ -79,7 +79,8 @@ fetch('https://api.attackontitanapi.com/characters')
     renderItems(allCharacters)
   })
 
-
+  let sortAscending = true
+let currentFilter = 'all'
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     let filter = btn.dataset.filter
