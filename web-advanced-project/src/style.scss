@@ -347,6 +347,19 @@ height: 200px;
     min-height: 300px;  
   }
 
+
+  .character-name {
+    font-size: 28px;
+  }
+
+  .character-info {
+    left: 20px;
+  }
+
+  .character-img img {
+    width: 100px;
+  }
+
    .bottom-bar {
     height: auto;
     flex-wrap: wrap;
