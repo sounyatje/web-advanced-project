@@ -379,17 +379,27 @@ height: 200px;
 }
 
 @media (max-width: 768px) {
- 
+body{
+align-items: center;}
   .logo-text{
     display: flex;
     flex-wrap: wrap;
   }
+
+  .sort-btn .filter-btn{
+   width: 30px;
+   height:15px;
+  }
+  
   .logo-title{display: flex; font-size: 15px;}
   .logo-sub{display: flex; font-size: 10px;}
   .container {
     flex-direction: column;
-    height: auto;      
+    height: auto;
+    width:90% ;
     overflow: visible;
+    margin: 10px;
+
   }
    .main {
     min-height: 300px;  
@@ -439,6 +449,7 @@ height: 200px;
   }
 
    .bottom-bar {
+    margin-top: 10px;
     height: auto;
     flex-wrap: wrap;
   }
@@ -462,8 +473,4 @@ height: 200px;
   bottom: 60px;
   display: flex;
 
-}
-
-
-  
-}
+}}
