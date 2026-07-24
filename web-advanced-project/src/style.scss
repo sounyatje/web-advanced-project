@@ -335,3 +335,12 @@ height: 200px;
   background-color: #0a0a0a;
   border: none;
 }
+
+@media (max-width: 768px) {
+ 
+  .container {
+    flex-direction: column;
+    height: auto;      
+    overflow: visible;
+  }
+}
