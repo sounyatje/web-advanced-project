@@ -42,6 +42,7 @@ function fillBottomBar(character) {
 
 
 function showCharacter(character) {
+  currentCharacter = character
   document.querySelector('.image-container').innerHTML = `<img src="${character.img ?? ''}" alt="${character.name}" style="height:100%; object-fit:contain;">`
   document.querySelector('.character-name').textContent = character.name
   document.querySelector('.character-desc').textContent = character.roles[0] ?? character.occupation ?? ''
@@ -123,3 +124,4 @@ document.getElementById('search').addEventListener('input', (e) => {
     }
   })
 })
+
