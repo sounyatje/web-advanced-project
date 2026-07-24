@@ -169,6 +169,30 @@ input::placeholder {
     align-items: center;
 }
 
+.links .item p,
+.column-headers p {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.column-headers {
+  display: flex;
+  gap: 10px;
+  height: 30px;
+  align-items: center;
+  text-align: center;
+  background: #0a0a0a;
+  border: 1px solid whitesmoke;
+  color: crimson;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .item:hover {
   background-color: red;
 }
@@ -181,6 +205,19 @@ color: whitesmoke;
 .item-affiliation{
   color: whitesmoke;
   text-align: center;
+}
+
+.item-occupation,
+.item-gender,
+.item-species {
+  color: whitesmoke;
+  text-align: center;
+}
+
+
+
+.item-status.deceased {
+  color: crimson;
 }
 
 .item.active {
@@ -381,6 +418,11 @@ height: 200px;
 
   .character-name {
     font-size: 28px;
+  }
+
+  .item-occupation,
+  .item-species {
+    display: none;
   }
 
   .character-info {

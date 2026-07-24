@@ -58,9 +58,19 @@ function renderItems(characters) {
   characters.forEach(character => {
     let item = document.createElement('div')
     item.classList.add('item')
+
+    let regiment = character.groups.length > 0 ? character.groups[0].name : character.roles[0] ?? 'Unknown'
+    let occupation = character.occupation ?? 'Unknown'
+    let gender = character.gender ?? 'Unknown'
+    let status = character.status ?? 'Unknown'
+    let species = Array.isArray(character.species) ? character.species[0] ?? 'Unknown' : character.species ?? 'Unknown'
+
     item.innerHTML = `
       <p class="item-name">${character.name}</p>
-      <p class="item-affiliation">${character.groups.length > 0 ? character.groups[0].name : character.roles[0] ?? character.occupation ?? 'Unknown'}</p>
+      <p class="item-affiliation">${regiment}</p>
+      <p class="item-occupation">${occupation}</p>
+      <p class="item-gender">${gender}</p>
+      <p class="item-species">${species}</p>
     `
     item.addEventListener('click', () => {
       document.querySelectorAll('.links .item').forEach(i => i.classList.remove('active'))
