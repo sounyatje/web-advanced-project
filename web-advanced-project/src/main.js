@@ -47,7 +47,7 @@ function selectByIndex(index) {
   currentIndex = index
   let character = currentList[currentIndex]
  
-  // alle rijen "niet actief" maken, en dan enkel de juiste rij markeren
+  
   let itemEls = document.querySelectorAll('.links .item:not(:first-child):not(:nth-child(2))')
   itemEls.forEach(item => item.classList.remove('active'))
   itemEls[currentIndex]?.classList.add('active')
@@ -78,7 +78,10 @@ function renderItems(characters) {
   document.querySelectorAll('.links .item:not(:first-child):not(:nth-child(2))').forEach(i => i.remove())
   let last = document.querySelector('.links .last')
 
-  characters.forEach(character => {
+  currentList = characters     
+  currentIndex = -1             
+
+  characters.forEach((character, index) => {  
     let item = document.createElement('div')
     item.classList.add('item')
 
@@ -96,16 +99,12 @@ function renderItems(characters) {
       <p class="item-status ${status.toLowerCase() === 'deceased' ? 'deceased' : ''}">${status}</p>
       <p class="item-species">${species}</p>
     `
-    item.addEventListener('click', () => {
-      document.querySelectorAll('.links .item').forEach(i => i.classList.remove('active'))
-      item.classList.add('active')
-      fillBottomBar(character)
-      showCharacter(character)
-    })
+
+    item.addEventListener('click', () => selectByIndex(index))   
+
     last.before(item)
   })
 }
-
 
 let allCharacters = []
 
