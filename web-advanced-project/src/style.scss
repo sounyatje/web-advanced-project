@@ -10,6 +10,7 @@ body {
   width: 100vw;
   height: 100vh;
    flex-direction: column;
+   overflow: hidden;
 }
 
 .top-bar {
@@ -208,6 +209,7 @@ input::placeholder {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  padding: 5px;
 }
 
 .item:hover {
@@ -431,6 +433,19 @@ height: 200px;
     opacity: 1;
     transform: scale(1);
   }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 3px;
 }
 
 @media (max-width: 768px) {
