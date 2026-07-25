@@ -218,3 +218,12 @@ document.querySelector('.heart').addEventListener('click', () => {
   localStorage.setItem('favorites', JSON.stringify(favorites))
   document.querySelector('.badge').textContent = favorites.length
 })
+
+const bgMusic = document.getElementById('bg-music')
+
+function startMusic() {
+  bgMusic.play().catch(err => console.log('Autoplay geblokkeerd:', err))
+  document.removeEventListener('click', startMusic)
+}
+
+document.addEventListener('click', startMusic)
