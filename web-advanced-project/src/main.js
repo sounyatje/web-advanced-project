@@ -222,20 +222,29 @@ document.querySelector('.heart').addEventListener('click', () => {
 const bgMusic = document.getElementById('bg-music')
 const stopBtn = document.getElementById('stop-music')
 
-function startMusic() {
-  bgMusic.play().catch(err => console.log('Autoplay geblokkeerd:', err))
-  document.removeEventListener('click', startMusic)
+function updateIcon() {
+  stopBtn.src = bgMusic.paused
+    ? './src/images/mute.png'
+    : './src/images/volume.png'
 }
 
-document.addEventListener('click', startMusic)
+document.addEventListener(
+  "click",
+  () => {
+    bgMusic.muted = false;
+    bgMusic.play();
+    updateIcon();
+  },
+  { once: true }
+);
 
-stopBtn.addEventListener('click', () => {
+stopBtn.addEventListener('click', (e) => {
+  e.stopPropagation()
   if (bgMusic.paused) {
     bgMusic.play()
     bgMusic.muted = false
-    stopBtn.src = './src/images/stop.png'
   } else {
     bgMusic.pause()
-    stopBtn.src = './src/images/play.png'
   }
+  updateIcon()
 })
