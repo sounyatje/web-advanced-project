@@ -3,6 +3,8 @@
 //https://codepen.io/
 //https://api.attackontitanapi.com/characters
 
+//TODO: BUG AANTAL FAVORIETEN!!!!!!!
+
 import './style.scss'
 
 let arrowleft = document.querySelector('.arrow.left img')
