@@ -117,7 +117,20 @@ input::placeholder {
   
 }
 
+.sort-select {
+  width: 70px;
+  height: 25px;
+  padding: 2px 4px;
+  font-size: 10px;
+  border: 1px solid whitesmoke;
+  background-color: #0a0a0a;
+  color: whitesmoke;
+  text-align: center;
+}
 
+.sort-select:hover {
+  background-color: red;
+}
 
 .regiment {
   display: flex;

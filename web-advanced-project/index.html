@@ -24,7 +24,14 @@
   </div>
   <div class="item">
     <div class="regiment">
-      <div><button class="sort-btn"><img src="./src/images/sort.png"></button></div>
+      <div>
+        <select class="sort-select">
+        <option value="" selected disabled>Sort</option>
+          <option value="asc">A - Z</option>
+          <option value="desc">Z - A</option>
+        </select>
+      </div>
+
       <div><button class="filter-btn" data-filter="all">ALL</button></div>
       <div><button class="filter-btn" data-filter="scout">SCOUT</button></div>
       <div><button class="filter-btn" data-filter="garrison">GARRISON</button></div>

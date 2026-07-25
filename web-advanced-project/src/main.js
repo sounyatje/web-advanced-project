@@ -40,7 +40,6 @@ function fillBottomBar(character) {
 function selectByIndex(index) {
   if (currentList.length === 0) return
  
-  // rondlopen: na het laatste weer naar het eerste, en omgekeerd
   index = index < 0 ? currentList.length - 1 : index
   index = index >= currentList.length ? 0 : index
  
@@ -119,46 +118,56 @@ fetch('https://api.attackontitanapi.com/characters')
   })
 
 
-let sortAscending = true
+
+let currentSort = 'asc'
 let currentFilter = 'all'
 
-document.querySelector('.sort-btn').addEventListener('click', () => {
-  sortAscending = !sortAscending
+document.querySelector('.sort-select').addEventListener('change', (e) => {
+  currentSort = e.target.value
 
-  let list = currentFilter === 'all' ? allCharacters
-    : currentFilter === 'scout' ? allCharacters.filter(c => c.groups.some(g => g.name === 'Scout Regiment'))
-    : currentFilter === 'garrison' ? allCharacters.filter(c => c.groups.some(g => g.name === 'Garrison Regiment'))
-    : currentFilter === 'warrior' ? allCharacters.filter(c => c.groups.some(g => g.name === 'Warrior Unit'))
-    : allCharacters.filter(c => (JSON.parse(localStorage.getItem('favorites')) || []).includes(c.id))
+  let list = getFilteredList(currentFilter)
 
-  list.sort((a, b) => sortAscending
+  list.sort((a, b) => currentSort === 'asc'
     ? a.name.localeCompare(b.name)
     : b.name.localeCompare(a.name))
 
   renderItems(list)
 })
 
+function getFilteredList(filter) {
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || []
+
+  if (filter === 'scout') return allCharacters.filter(c => c.groups.some(g => g.name === 'Scout Regiment'))
+  if (filter === 'garrison') return allCharacters.filter(c => c.groups.some(g => g.name === 'Garrison Regiment'))
+  if (filter === 'warrior') return allCharacters.filter(c => c.groups.some(g => g.name === 'Warrior Unit'))
+  if (filter === 'favourites') return allCharacters.filter(c => favorites.includes(c.id))
+  return allCharacters
+}
+
 
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    let filter = btn.dataset.filter
-    currentFilter = filter
+    currentFilter = btn.dataset.filter
 
-    if (filter === 'all') {
-      renderItems(allCharacters)
-    } else if (filter === 'scout') {
-      renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Scout Regiment')))
-    } else if (filter === 'garrison') {
-      renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Garrison Regiment')))
-    } else if (filter === 'warrior') {
-      renderItems(allCharacters.filter(c => c.groups.some(g => g.name === 'Warrior Unit')))
-    } else if (filter === 'favourites') {
-      let favorites = JSON.parse(localStorage.getItem('favorites')) || []
-      renderItems(allCharacters.filter(c => favorites.includes(c.id)))
-    }
+    let list = getFilteredList(currentFilter)
+    list.sort((a, b) => currentSort === 'asc'
+      ? a.name.localeCompare(b.name)
+      : b.name.localeCompare(a.name))
+
+    renderItems(list)
   })
 })
 
+
+document.getElementById('search').addEventListener('input', (e) => {
+  let searchValue = e.target.value.toLowerCase()
+  document.querySelectorAll('.links .item').forEach(item => {
+    let name = item.querySelector('.item-name')?.textContent.toLowerCase()
+    if (name) {
+      item.style.display = name.includes(searchValue) ? 'flex' : 'none'
+    }
+  })
+})
 
 document.getElementById('search').addEventListener('input', (e) => {
   let searchValue = e.target.value.toLowerCase()
