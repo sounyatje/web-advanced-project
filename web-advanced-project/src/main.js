@@ -220,6 +220,7 @@ document.querySelector('.heart').addEventListener('click', () => {
 })
 
 const bgMusic = document.getElementById('bg-music')
+const stopBtn = document.getElementById('stop-music')
 
 function startMusic() {
   bgMusic.play().catch(err => console.log('Autoplay geblokkeerd:', err))
@@ -227,3 +228,14 @@ function startMusic() {
 }
 
 document.addEventListener('click', startMusic)
+
+stopBtn.addEventListener('click', () => {
+  if (bgMusic.paused) {
+    bgMusic.play()
+    bgMusic.muted = false
+    stopBtn.src = './src/images/stop.png'
+  } else {
+    bgMusic.pause()
+    stopBtn.src = './src/images/play.png'
+  }
+})
