@@ -25,6 +25,8 @@ searchImg.addEventListener('mousedown', () => { searchImg.src = './src/images/se
 searchImg.addEventListener('mouseup', () => { searchImg.src = './src/images/search.png' })
 searchImg.addEventListener('mouseleave', () => { searchImg.src = './src/images/search.png' })
 
+arrowleft.addEventListener('click', () => selectByIndex(currentIndex - 1))
+arrowright.addEventListener('click', () => selectByIndex(currentIndex + 1))
 
 let currentCharacter = null
 
