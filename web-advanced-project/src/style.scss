@@ -413,6 +413,22 @@ height: 200px;
   }
 }
 
+.image-container img {
+  height: 100%;
+  object-fit: contain;
+  animation: fadeInImg 0.4s ease;
+}
+
+@keyframes fadeInImg {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 @media (max-width: 768px) {
 
