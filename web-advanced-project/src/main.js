@@ -11,6 +11,20 @@ let arrowright = document.querySelector('.arrow.right img')
 const leftOriginal = arrowleft.src
 const rightOriginal = arrowright.src
 
+const rowObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible')
+      observer.unobserve(entry.target)
+    }
+  })
+}, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+})
+
+
 arrowleft.addEventListener('mousedown', () => { arrowleft.src = './src/images/controlLR.png' })
 arrowleft.addEventListener('mouseup', () => { arrowleft.src = leftOriginal })
 arrowleft.addEventListener('mouseleave', () => { arrowleft.src = leftOriginal })
@@ -24,6 +38,8 @@ let searchImg = document.querySelector('#search-button img')
 searchImg.addEventListener('mousedown', () => { searchImg.src = './src/images/searchred.png' })
 searchImg.addEventListener('mouseup', () => { searchImg.src = './src/images/search.png' })
 searchImg.addEventListener('mouseleave', () => { searchImg.src = './src/images/search.png' })
+
+
 
 let currentCharacter = null
 let currentList = []
@@ -77,6 +93,8 @@ function renderItems(characters) {
   document.querySelectorAll('.links .item:not(:first-child):not(:nth-child(2))').forEach(i => i.remove())
   let last = document.querySelector('.links .last')
 
+    rowObserver.disconnect()  
+
   currentList = characters     
   currentIndex = -1             
 
@@ -102,20 +120,24 @@ function renderItems(characters) {
     item.addEventListener('click', () => selectByIndex(index))   
 
     last.before(item)
+    rowObserver.observe(item)   
+
   })
 }
 
 let allCharacters = []
 
-fetch('https://api.attackontitanapi.com/characters')
-  .then(response => response.json())
-  .then(data => {
-    allCharacters = data.results
-    renderItems(allCharacters)
+async function loadCharacters() {
+  const response = await fetch('https://api.attackontitanapi.com/characters')
+  const data = await response.json()
+  allCharacters = data.results
+  renderItems(allCharacters)
+  
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || []
+  document.querySelector('.badge').textContent = favorites.length
+}
 
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || []
-    document.querySelector('.badge').textContent = favorites.length
-  })
+loadCharacters()
 
 
 
