@@ -1,0 +1,31 @@
+{
+  "factions": [
+    {
+      "id": 1,
+      "name": "Garrison",
+      "api_name": "Garrison Regiment",
+      "description": "Military branch responsible for protecting the walls and cities.",
+      "members": [
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Warriors",
+      "api_name": "Warrior Unit",
+      "description": "Marleyan Eldians chosen to inherit the Nine Titans.",
+      "members": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    }
+    
+  ]
+}

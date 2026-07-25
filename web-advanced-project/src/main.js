@@ -5,7 +5,6 @@
 
 import './style.scss'
 
-
 let arrowleft = document.querySelector('.arrow.left img')
 let arrowright = document.querySelector('.arrow.right img')
 const leftOriginal = arrowleft.src
@@ -24,7 +23,6 @@ const rowObserver = new IntersectionObserver((entries, observer) => {
   threshold: 0.1
 })
 
-
 arrowleft.addEventListener('mousedown', () => { arrowleft.src = './src/images/controlLR.png' })
 arrowleft.addEventListener('mouseup', () => { arrowleft.src = leftOriginal })
 arrowleft.addEventListener('mouseleave', () => { arrowleft.src = leftOriginal })
@@ -33,13 +31,10 @@ arrowright.addEventListener('mousedown', () => { arrowright.src = './src/images/
 arrowright.addEventListener('mouseup', () => { arrowright.src = rightOriginal })
 arrowright.addEventListener('mouseleave', () => { arrowright.src = rightOriginal })
 
-
 let searchImg = document.querySelector('#search-button img')
 searchImg.addEventListener('mousedown', () => { searchImg.src = './src/images/searchred.png' })
 searchImg.addEventListener('mouseup', () => { searchImg.src = './src/images/search.png' })
 searchImg.addEventListener('mouseleave', () => { searchImg.src = './src/images/search.png' })
-
-
 
 let currentCharacter = null
 let currentList = []
@@ -51,7 +46,6 @@ function fillBottomBar(character) {
   document.querySelector('.bottom-bar .blok:nth-child(3) .value').textContent = character.gender ?? 'Unknown'
   document.querySelector('.bottom-bar .blok:nth-child(4) .value').textContent = character.alias[0] ?? 'Unknown'
 }
-
 
 function selectByIndex(index) {
   if (currentList.length === 0) return
@@ -75,7 +69,6 @@ function selectByIndex(index) {
 arrowleft.addEventListener('click', () => selectByIndex(currentIndex - 1))
 arrowright.addEventListener('click', () => selectByIndex(currentIndex + 1))
  
-
 function showCharacter(character) {
   currentCharacter = character
 
@@ -128,17 +121,24 @@ function renderItems(characters) {
 let allCharacters = []
 
 async function loadCharacters() {
-  const response = await fetch('https://api.attackontitanapi.com/characters')
-  const data = await response.json()
-  allCharacters = data.results
+  let characters = []
+
+  for (let page = 1; page <= 11; page++) {
+    const response = await fetch(
+      `https://api.attackontitanapi.com/characters?page=${page}`
+    )
+
+    const data = await response.json()
+
+    characters.push(...data.results)
+  }
+
+  allCharacters = characters
+
   renderItems(allCharacters)
-  
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || []
-  document.querySelector('.badge').textContent = favorites.length
 }
 
 loadCharacters()
-
 
 
 let currentSort = null
