@@ -268,8 +268,6 @@ height: 200px;
   flex-direction: column;
 }
 
-
-
 .main {
   flex: 1;
   background-image: url(./src/images/bg.jpg);
@@ -293,6 +291,7 @@ height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color:white
 }
 
 .image-container img {
@@ -394,36 +393,38 @@ height: 200px;
 
 @media (max-width: 768px) {
 
-body{
-align-items: center;
-padding-bottom: 10px;}
+  html, body {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  body {
+    align-items: center;
+    padding: 10px 0 20px;
+  }
+
   .logo-text{
     display: flex;
     flex-wrap: wrap;
   }
-
-  .sort-btn .filter-btn{
-   width: 30px;
-   height:15px;
-  }
-
   .logo-title{display: flex; font-size: 15px;}
   .logo-sub{display: flex; font-size: 10px;}
   .container {
     flex-direction: column;
     height: auto;
-    width:90% ;
+    width: 90%;
     overflow: visible;
-    margin: 10px;
-
+    margin: 10px 0;
+    gap: 20px;
   }
    .main {
-    min-height: 300px;  
+    min-height: 280px;
   }
 
   .links {
     width: 100%;
-    max-height: 60vh;
+    max-height: 45vh;
     overflow-y: auto;   
     flex-shrink: 0;     
   }
@@ -440,9 +441,11 @@ padding-bottom: 10px;}
 .regiment {
     flex-wrap: wrap;
     gap: 6px;
+    margin-bottom: 10px;
   }
 
-  .regiment button {
+  .regiment button,
+  .sort-select {
     width: auto;
     flex: 1 1 60px;
   }
@@ -466,6 +469,7 @@ padding-bottom: 10px;}
 
    .bottom-bar {
     margin-top: 10px;
+    margin-bottom: 10px;
     height: auto;
     flex-wrap: wrap;
   }
@@ -488,5 +492,23 @@ padding-bottom: 10px;}
   position: absolute;
   bottom: 60px;
   display: flex;
+}
 
-}}
+.column-headers{
+  padding: 2.5px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
