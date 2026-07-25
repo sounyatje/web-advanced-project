@@ -66,31 +66,11 @@ body {
   display: flex;
   flex-direction: column;
   width: 700px;
-
-}
- /*nieuw*/
-.character-list {
-  flex: 1;
-  overflow-y: auto;
-  
+overflow-y: auto;
+max-height:95vh;
+max-width: 90vw;
 }
 
-/* barre de scroll personnalisée */
-.characters-list::-webkit-scrollbar {
-  width: 8px;
-}
-
-.characters-list::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-
-.characters-list::-webkit-scrollbar-thumb {
-  background: whitesmoke;
-}
-
-.characters-list::-webkit-scrollbar-thumb:hover {
-  background: crimson;
-}
 
 .links .top {
   height: 50px;
