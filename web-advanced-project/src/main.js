@@ -119,7 +119,7 @@ fetch('https://api.attackontitanapi.com/characters')
 
 
 
-let currentSort = 'asc'
+let currentSort = null
 let currentFilter = 'all'
 
 document.querySelector('.sort-select').addEventListener('change', (e) => {
