@@ -33,7 +33,7 @@ body {
 
 .logo-icon img {
   width: auto;
-  height: 100%; /* volledige hoogte van top-bar */
+  height: 100%; 
   object-fit: contain;
 }
 
@@ -60,7 +60,6 @@ body {
   display: flex;
   flex: 1;
 }
-
 
 .links {
   display: flex;
