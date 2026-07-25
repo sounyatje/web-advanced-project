@@ -25,11 +25,9 @@ searchImg.addEventListener('mousedown', () => { searchImg.src = './src/images/se
 searchImg.addEventListener('mouseup', () => { searchImg.src = './src/images/search.png' })
 searchImg.addEventListener('mouseleave', () => { searchImg.src = './src/images/search.png' })
 
-arrowleft.addEventListener('click', () => selectByIndex(currentIndex - 1))
-arrowright.addEventListener('click', () => selectByIndex(currentIndex + 1))
-
 let currentCharacter = null
-
+let currentList = []
+let currentIndex = -1
 
 function fillBottomBar(character) {
   document.querySelector('.bottom-bar .blok:nth-child(1) .value').textContent = character.groups[0]?.name ?? 'Unknown'
@@ -38,6 +36,30 @@ function fillBottomBar(character) {
   document.querySelector('.bottom-bar .blok:nth-child(4) .value').textContent = character.alias[0] ?? 'Unknown'
 }
 
+
+function selectByIndex(index) {
+  if (currentList.length === 0) return
+ 
+  // rondlopen: na het laatste weer naar het eerste, en omgekeerd
+  index = index < 0 ? currentList.length - 1 : index
+  index = index >= currentList.length ? 0 : index
+ 
+  currentIndex = index
+  let character = currentList[currentIndex]
+ 
+  // alle rijen "niet actief" maken, en dan enkel de juiste rij markeren
+  let itemEls = document.querySelectorAll('.links .item:not(:first-child):not(:nth-child(2))')
+  itemEls.forEach(item => item.classList.remove('active'))
+  itemEls[currentIndex]?.classList.add('active')
+  itemEls[currentIndex]?.scrollIntoView({ block: 'nearest' })
+ 
+  fillBottomBar(character)
+  showCharacter(character)
+}
+ 
+arrowleft.addEventListener('click', () => selectByIndex(currentIndex - 1))
+arrowright.addEventListener('click', () => selectByIndex(currentIndex + 1))
+ 
 
 function showCharacter(character) {
   currentCharacter = character
@@ -51,7 +73,6 @@ function showCharacter(character) {
     ? './src/images/heartfilled.png'
     : './src/images/emptyheart.png'
 }
-
 
 function renderItems(characters) {
   document.querySelectorAll('.links .item:not(:first-child):not(:nth-child(2))').forEach(i => i.remove())
