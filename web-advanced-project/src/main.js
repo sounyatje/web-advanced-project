@@ -134,7 +134,7 @@ async function loadCharacters() {
   }
 
   allCharacters = characters
-
+ allCharacters.forEach(c => console.log(c.groups.map(g => g.name)))
   renderItems(allCharacters)
 }
 
@@ -161,7 +161,7 @@ function getFilteredList(filter) {
 
   if (filter === 'scout') return allCharacters.filter(c => c.groups.some(g => g.name === 'Scout Regiment'))
   if (filter === 'garrison') return allCharacters.filter(c => c.groups.some(g => g.name === 'Garrison Regiment'))
-  if (filter === 'warrior') return allCharacters.filter(c => c.groups.some(g => g.name === 'Warrior Unit'))
+  if (filter === 'marleyan') return allCharacters.filter(c => c.groups.some(g => g.name === 'Marleyan military'))
   if (filter === 'favourites') return allCharacters.filter(c => favorites.includes(c.id))
   return allCharacters
 }
@@ -212,9 +212,7 @@ document.querySelector('.heart').addEventListener('click', () => {
   localStorage.setItem('favorites', JSON.stringify(favorites))
   updateFavoritesBadge()
 
-  if (currentFilter === 'favourites') {
-    renderItems(getFilteredList('favourites'))
-  }
+  
 })
 
 loadCharacters()
