@@ -3,6 +3,12 @@
 //https://codepen.io/
 //https://api.attackontitanapi.com/characters
 
+//TODO: favorieten spontaan van de lijst wegdoen zodra ik klik op het hartje
+//TODO: vercel knopjes werken niet 
+//TODO: readme + screenshots
+//TODO: Lijnnummers bij technische vereisten nog invullen
+//TODO: firefox is css anders
+
 import './style.scss'
 
 let arrowleft = document.querySelector('.arrow.left img')
@@ -134,7 +140,6 @@ async function loadCharacters() {
   }
 
   allCharacters = characters
- allCharacters.forEach(c => console.log(c.groups.map(g => g.name)))
   renderItems(allCharacters)
 }
 
