@@ -161,6 +161,8 @@ function getFilteredList(filter) {
 
   if (filter === 'scout') return allCharacters.filter(c => c.groups.some(g => g.name === 'Scout Regiment'))
   if (filter === 'garrison') return allCharacters.filter(c => c.groups.some(g => g.name === 'Garrison Regiment'))
+  if (filter === 'military') return allCharacters.filter(c => c.groups.some(g => g.name === 'Military Police Regiment'))
+  if (filter === 'nobility' || filter === 'royal government') return allCharacters.filter(c => c.groups.some(g => g.name === 'Nobility' || g.name === 'Royal Government'))
   if (filter === 'marleyan') return allCharacters.filter(c => c.groups.some(g => g.name === 'Marleyan military'))
   if (filter === 'favourites') return allCharacters.filter(c => favorites.includes(c.id))
   return allCharacters
