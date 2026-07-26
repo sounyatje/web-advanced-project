@@ -495,18 +495,24 @@ height: 200px;
       min-height: 0; 
   }
 
+
 .regiment {
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 10px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 5px;
+}
 
-  .regiment button,
-  .sort-select {
-    width: auto;
-    flex: 1 1 60px;
-  }
-
+.regiment button,
+.sort-select {
+  flex: 1 1 auto;
+  min-width: 40px;
+  height:20px;
+  width: auto;
+  font-size: 10px;
+  padding: 3px 5px;
+}
   .character-name {
     font-size: 28px;
   }
