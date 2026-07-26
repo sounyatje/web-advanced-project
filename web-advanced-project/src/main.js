@@ -138,9 +138,6 @@ async function loadCharacters() {
   renderItems(allCharacters)
 }
 
-loadCharacters()
-
-
 let currentSort = null
 let currentFilter = 'all'
 
