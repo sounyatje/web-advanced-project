@@ -23,18 +23,18 @@ const rowObserver = new IntersectionObserver((entries, observer) => {
   threshold: 0.1
 })
 
-arrowleft.addEventListener('mousedown', () => { arrowleft.src = './src/images/controlLR.png' })
+arrowleft.addEventListener('mousedown', () => { arrowleft.src = './public/images/controlLR.png' })
 arrowleft.addEventListener('mouseup', () => { arrowleft.src = leftOriginal })
 arrowleft.addEventListener('mouseleave', () => { arrowleft.src = leftOriginal })
 
-arrowright.addEventListener('mousedown', () => { arrowright.src = './src/images/controlRR.png' })
+arrowright.addEventListener('mousedown', () => { arrowright.src = './public/images/controlRR.png' })
 arrowright.addEventListener('mouseup', () => { arrowright.src = rightOriginal })
 arrowright.addEventListener('mouseleave', () => { arrowright.src = rightOriginal })
 
 let searchImg = document.querySelector('#search-button img')
-searchImg.addEventListener('mousedown', () => { searchImg.src = './src/images/searchred.png' })
-searchImg.addEventListener('mouseup', () => { searchImg.src = './src/images/search.png' })
-searchImg.addEventListener('mouseleave', () => { searchImg.src = './src/images/search.png' })
+searchImg.addEventListener('mousedown', () => { searchImg.src = './public/images/searchred.png' })
+searchImg.addEventListener('mouseup', () => { searchImg.src = './public/images/search.png' })
+searchImg.addEventListener('mouseleave', () => { searchImg.src = './public/images/search.png' })
 
 let currentCharacter = null
 let currentList = []
@@ -78,8 +78,8 @@ function showCharacter(character) {
 
   let favorites = JSON.parse(localStorage.getItem('favorites')) || []
   document.querySelector('.heart img').src = favorites.includes(character.id)
-    ? './src/images/heartfilled.png'
-    : './src/images/emptyheart.png'
+    ? './public/images/heartfilled.png'
+    : './public/images/emptyheart.png'
 }
 
 function renderItems(characters) {
@@ -202,10 +202,10 @@ document.querySelector('.heart').addEventListener('click', () => {
 
   if (favorites.includes(currentCharacter.id)) {
     favorites = favorites.filter(id => id !== currentCharacter.id)
-    document.querySelector('.heart img').src = './src/images/emptyheart.png'
+    document.querySelector('.heart img').src = './public/images/emptyheart.png'
   } else {
     favorites.push(currentCharacter.id)
-    document.querySelector('.heart img').src = './src/images/heartfilled.png'
+    document.querySelector('.heart img').src = './public/images/heartfilled.png'
   }
 
   localStorage.setItem('favorites', JSON.stringify(favorites))
@@ -222,8 +222,8 @@ const stopBtn = document.getElementById('stop-music')
 
 function updateIcon() {
   stopBtn.src = bgMusic.paused
-    ? './src/images/mute.png'
-    : './src/images/volume.png'
+    ? './public/images/mute.png'
+    : './public/images/volume.png'
 }
 
 document.addEventListener(
