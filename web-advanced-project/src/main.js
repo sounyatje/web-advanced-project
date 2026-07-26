@@ -3,8 +3,6 @@
 //https://codepen.io/
 //https://api.attackontitanapi.com/characters
 
-//TODO: BUG AANTAL FAVORIETEN!!!!!!!
-
 import './style.scss'
 
 let arrowleft = document.querySelector('.arrow.left img')
@@ -193,6 +191,11 @@ document.getElementById('search').addEventListener('input', (e) => {
 })
 
 
+function updateFavoritesBadge() {
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || []
+  document.querySelector('.badge').textContent = favorites.length
+}
+
 document.querySelector('.heart').addEventListener('click', () => {
   if (!currentCharacter) return
 
@@ -207,8 +210,11 @@ document.querySelector('.heart').addEventListener('click', () => {
   }
 
   localStorage.setItem('favorites', JSON.stringify(favorites))
-  document.querySelector('.badge').textContent = favorites.length
+  updateFavoritesBadge()
 })
+
+loadCharacters()
+updateFavoritesBadge()
 
 const bgMusic = document.getElementById('bg-music')
 const stopBtn = document.getElementById('stop-music')
