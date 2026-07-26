@@ -182,17 +182,6 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   })
 })
 
-
-document.getElementById('search').addEventListener('input', (e) => {
-  let searchValue = e.target.value.toLowerCase()
-  document.querySelectorAll('.links .item').forEach(item => {
-    let name = item.querySelector('.item-name')?.textContent.toLowerCase()
-    if (name) {
-      item.style.display = name.includes(searchValue) ? 'flex' : 'none'
-    }
-  })
-})
-
 document.getElementById('search').addEventListener('input', (e) => {
   let searchValue = e.target.value.toLowerCase()
   document.querySelectorAll('.links .item').forEach(item => {
