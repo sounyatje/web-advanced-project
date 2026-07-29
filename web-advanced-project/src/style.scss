@@ -453,6 +453,12 @@ height: 200px;
   scrollbar-color: red black;
 }
 
+.filter-btn.active,
+.sort-btn.active {
+  background-color:red;
+  color: white;
+}
+
 @media (max-width: 768px) {
 
   html, body {

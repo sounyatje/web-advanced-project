@@ -4,7 +4,7 @@
 //https://api.attackontitanapi.com/characters
 
 //TODO: readme + screenshots
-//TODO: knoppen bij sorteren en filter actief laten door een kleurtje 
+//TODO: formulier toevoegen
 
 import './style.scss'
 
@@ -119,6 +119,7 @@ function renderItems(characters) {
     rowObserver.observe(item)   
 
   })
+  selectByIndex(0)
 }
 
 let allCharacters = []
@@ -136,8 +137,9 @@ async function loadCharacters() {
     characters.push(...data.results)
   }
 
-  allCharacters = characters
-  renderItems(allCharacters)
+allCharacters = characters
+renderItems(allCharacters)
+selectByIndex(0)
 }
 
 let currentSort = null
@@ -153,6 +155,7 @@ document.querySelector('.sort-select').addEventListener('change', (e) => {
     : b.name.localeCompare(a.name))
 
   renderItems(list)
+  selectByIndex(0)
 })
 
 function getFilteredList(filter) {
@@ -170,6 +173,12 @@ function getFilteredList(filter) {
 
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
+
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.classList.remove('active')
+    })
+
+    btn.classList.add('active')
     currentFilter = btn.dataset.filter
 
     let list = getFilteredList(currentFilter)
@@ -183,6 +192,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 
 document.getElementById('search').addEventListener('input', (e) => {
   let searchValue = e.target.value.toLowerCase()
+  
   document.querySelectorAll('.links .item').forEach(item => {
     let name = item.querySelector('.item-name')?.textContent.toLowerCase()
     if (name) {
