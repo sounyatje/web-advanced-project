@@ -4,7 +4,7 @@
 //https://api.attackontitanapi.com/characters
 
 //TODO: readme + screenshots
-//TODO: Lijnnummers bij technische vereisten nog invullen
+//TODO: knoppen bij sorteren en filter actief laten door een kleurtje 
 
 import './style.scss'
 
