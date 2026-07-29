@@ -57,6 +57,7 @@ npm run dev
 
 ### Filters en sortering
 ![Filters](/web-advanced-project/screenshots/filter.png)
+![sortering](/web-advanced-project/screenshots/filter.png)
 
 ### Favorites
 ![Favorites](/web-advanced-project/screenshots/sort.png)
