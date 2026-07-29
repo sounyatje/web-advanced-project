@@ -448,6 +448,11 @@ height: 200px;
   border-radius: 3px;
 }
 
+.links {
+  scrollbar-width: thin;
+  scrollbar-color: red black;
+}
+
 @media (max-width: 768px) {
 
   html, body {
@@ -561,4 +566,7 @@ height: 200px;
   padding: 2.5px;
 }
 
+.image-container p {
+  text-align: center;
+}
 }

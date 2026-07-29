@@ -3,7 +3,6 @@
 //https://codepen.io/
 //https://api.attackontitanapi.com/characters
 
-//TODO: favorieten spontaan van de lijst wegdoen zodra ik klik op het hartje
 //TODO: vercel knopjes werken niet 
 //TODO: readme + screenshots
 //TODO: Lijnnummers bij technische vereisten nog invullen
@@ -217,6 +216,7 @@ document.querySelector('.heart').addEventListener('click', () => {
   updateFavoritesBadge()
   if (currentFilter === 'favourites') {
     renderItems(getFilteredList('favourites'))
+    
   }
 
   
