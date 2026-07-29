@@ -34,7 +34,7 @@ npm run dev
 | Template literals | main.js - lijn 78, 107-114, 131| ${....} |
 | Iteratie over arrays | main.js - lijn 64, 97, 129, 186 | for en forEach |
 | Array methodes | main.js - lijn 161-166, 151, 83, 166, 189, 205, 136, 209 | filter, some, sort, includes, push, filter|
-| Arrow functions | main.js |
+| Arrow functions | main.js lijn 17, 29-40, 72-73, 97, 116, 161-166, 171, 172, 184, 186, 200, 235, 243 | |
 | Ternary operator | main.js |
 | Callback functions | main.js |
 | Promises | main.js |
