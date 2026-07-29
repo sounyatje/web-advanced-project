@@ -25,13 +25,10 @@ npm run dev
 
 ## Technische vereisten
 
-| Vereiste | Waar in de code |
-|---|---|
-| Elementen selecteren | main.js | Elementen worden geselecteerd met querySelector, querySelectorAll en getElementById. | let arrowleft = document.querySelector('.arrow.left img')
-let searchImg = document.querySelector('#search-button img')
-document.getElementById('search') |
-
-| Elementen manipuleren | main.js |
+| Vereiste | Waar in de code | Uitleg |
+|---|---|---|
+| Elementen selecteren | main.js - lijn 11, 37, 184 | querySelector, querySelectorAll, getElementById |
+| Elementen manipuleren | main.js - lijn 78,79,99,107 | textContent, innerHTML, classList |
 | Events aan elementen koppelen | main.js |
 | Constanten | main.js |
 | Template literals | main.js |
