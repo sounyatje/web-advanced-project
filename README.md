@@ -27,7 +27,10 @@ npm run dev
 
 | Vereiste | Waar in de code |
 |---|---|
-| Elementen selecteren | main.js |
+| Elementen selecteren | main.js | Elementen worden geselecteerd met querySelector, querySelectorAll en getElementById. | let arrowleft = document.querySelector('.arrow.left img')
+let searchImg = document.querySelector('#search-button img')
+document.getElementById('search') |
+
 | Elementen manipuleren | main.js |
 | Events aan elementen koppelen | main.js |
 | Constanten | main.js |
