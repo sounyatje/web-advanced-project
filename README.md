@@ -34,18 +34,20 @@ npm run dev
 | Template literals | main.js - lijn 78, 107-114, 131| ${....} |
 | Iteratie over arrays | main.js - lijn 64, 97, 129, 186 | for en forEach |
 | Array methodes | main.js - lijn 161-166, 151, 83, 166, 189, 205, 136, 209 | filter, some, sort, includes, push, filter|
-| Arrow functions | main.js lijn 17, 29-40, 72-73, 97, 116, 161-166, 171, 172, 184, 186, 200, 235, 243 | |
-| Ternary operator | main.js |
-| Callback functions | main.js |
-| Promises | main.js |
-| Async & Await | main.js |
-| Observer API | main.js |
-| Fetch | main.js |
-| JSON manipuleren | main.js |
+| Arrow functions | main.js lijn 17, 29-40, 72-73, 97, 116, 161-166, 171, 172, 184, 186, 200, 235, 243 | function + () => { |
+| Ternary operator | main.js lijn 57, 84-85, 112, 152-153, 177-178, 189, 231-232| condition ? A : B |
+| Callback functions | main.js lijn 16, 29-40, 63, 72-73, 97, 116, 146, 151, 161-166 (calback in a callback), 171, | (entries, observer) => {, addEventListener(...), item => item.classList.remove('active'), () => selectByIndex(currentIndex - 1), (character, index) => {, () => selectByIndex(index), (e) => {, list.sort((a, b) =>, c => c.groups.some(g => g.name === 'Scout Regiment'), g => g.name === 'Scout Regiment', btn => {, ...
+
+| Promises | main.js lijn 130-131 | const response = await fetch( `https://api.attackontitanapi.com/characters?page=${page}`) |
+| Async & Await | main.js lijn 126-141 | function loadCharachters () |
+| Observer API | main.js lijn 16-27 | const rowObserver = new IntersectionObserver((entries, observer) => { |
+
+| Fetch | main.js lijn 130-131| const response = await fetch( `https://api.attackontitanapi.com/characters?page=${page}`) |
+| JSON manipuleren | main.js lijn 134,136, 213 | const data = await response.json() ... characters.push(...data.results), localStorage.setItem('favorites', JSON.stringify(favorites)) |
 | Formulier validatie | main.js |
 | LocalStorage | main.js |
-| Flexbox / CSS Grid | style.scss |
-| Vite | vite.config.js |
+| Flexbox / CSS Grid | style.scss lijn 9, 12, 21, 25, 43, 61, 62, 66, 67, 79, 80, 140, 156, 180, 183, 192, 201, |
+| Vite | vite.config.js | zie file |
 
 ## Screenshots
 
