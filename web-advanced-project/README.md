@@ -53,16 +53,16 @@ npm run dev
 ![Hoofdscherm](/web-advanced-project/screenshots/home.png)
 
 ### Character details
-![Character details](./screenshots/character.png)
+![Character details](/web-advanced-project/screenshots/charachter.png)
 
 ### Filters en sortering
-![Filters](./screenshots/filters.png)
+![Filters](/web-advanced-project/screenshots/filter.png)
 
 ### Favorites
-![Favorites](./screenshots/favorites.png)
+![Favorites](/web-advanced-project/screenshots/sort.png)
 
 ### responsive
-![Responsive](./screenshots/responsive)
+![Responsive](/web-advanced-project/screenshots/responsive.png)
 
 ## Bronnen
 
