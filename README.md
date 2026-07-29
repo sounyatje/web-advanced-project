@@ -28,11 +28,11 @@ npm run dev
 | Vereiste | Waar in de code | Uitleg |
 |---|---|---|
 | Elementen selecteren | main.js - lijn 11, 12, 37, 47-50, 63, 78-80, 83, 89, 90, 146, 171, 186, 197, 200, 207, 210, 187, 184, 226, 227 | querySelector, querySelectorAll, getElementById |
-| Elementen manipuleren | main.js - lijn 78,79,99,107 | textContent, innerHTML, classList |
-| Events aan elementen koppelen | main.js - lijn 72, 200 | addEventListener |
-| Constanten | main.js - lijn 13,14,16 | const ... |
-| Template literals | main.js - lijn 107-114,131| ${....} |
-| Iteratie over arrays | main.js - lijn 64,97,129,186 | for en forEach |
+| Elementen manipuleren | main.js - lijn 47-50, 79-80, 187, 197, 78, 107, 19, 64, 65, 99 | textContent, innerHTML, classList |
+| Events aan elementen koppelen | main.js - lijn 29-40, 72-73, 116, 146, 172, 184, 200, 235, 245, | addEventListener |
+| Constanten | main.js - lijn 13, 14, 16, 130, 134, 196, 226, 227 | const ... |
+| Template literals | main.js - lijn 78, 107-114, 131| ${....} |
+| Iteratie over arrays | main.js - lijn 64, 97, 129, 186 | for en forEach |
 | Array methodes | main.js - lijn 161-166, 151, 83, 166, 189, 205, 136, 209 | filter, some, sort, includes, push, filter|
 | Arrow functions | main.js |
 | Ternary operator | main.js |
