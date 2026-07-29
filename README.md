@@ -11,17 +11,7 @@ Een interactieve single-page webapplicatie gebouwd met Vite, HTML, SCSS en JavaS
 - Sorteren aan de hand van een select (A - Z EN Z - A)
 - Pijlen met actieve/inactieve afbeeldingen bij klikken
 - Hartje om personages als favoriet te markeren
-
-### Nog te doen
-
-- filter werkt nog niet op de correcte manier
-- Favorieten opslaan via LocalStorage
-- Favorieten filter laten werken
-- Sorteerfunctie toevoegen
-- Responsive design
-- Character afbeelding tonen bij selectie
-- Pijlen om door personages te navigeren
-
+  
 ## Gebruikte API
 
 - [Attack on Titan API](https://api.attackontitanapi.com)
