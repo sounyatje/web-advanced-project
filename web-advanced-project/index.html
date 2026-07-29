@@ -1,98 +1,111 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Attack on titan</title>
-    <!-- <link rel="stylesheet" href="style.scss" /> -->
-     <link rel="icon" type="image/png" href="./public/images/logo.png">
-  </head>
-  <audio id="bg-music" src="./public/audio/進撃の巨人season2 巨人化BGM（高音質）attack on titan season2 episode6 BGM.mp3" loop></audio>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attack on titan</title>
+  <!-- <link rel="stylesheet" href="style.scss" /> -->
+  <link rel="icon" type="image/png" href="./public/images/logo.png">
+</head>
+<audio id="bg-music" src="./public/audio/進撃の巨人season2 巨人化BGM（高音質）attack on titan season2 episode6 BGM.mp3" loop></audio>
+
+<body>
   <div class="top-bar">
-      <div class="logo">
-    <span class="logo-icon"><img src="./public/images/logo.png" alt="logo"></span>
-    <div class="logo-text">
-      <p class="logo-title">TITAN ARCHIVES</p>
-      <p class="logo-sub">SURVEY CORPS DATABASE</p>
+    <div class="logo">
+      <span class="logo-icon"><img src="./public/images/logo.png" alt="logo"></span>
+      <div class="logo-text">
+        <p class="logo-title">TITAN ARCHIVES</p>
+        <p class="logo-sub">SURVEY CORPS DATABASE</p>
+      </div>
     </div>
+    <img id="stop-music" src="./public/images/volume.png" alt="on/off music">
   </div>
-  <img id="stop-music" src="./public/images/volume.png" alt="on/off music">
-  </div>
-    <div class="container">
-      <div class="links">
-  <div class="top">
-    <input id="search" type="text" placeholder="Search...">
-    <button id="search-button"><img src="./public/images/search.png" alt=""></button>
-  </div>
-  <div class="item">
-    <div class="regiment">
-      <div>
-        <select class="sort-select">
-        <option value="" selected disabled>SORT</option>
-          <option value="asc">A - Z</option>
-          <option value="desc">Z - A</option>
-        </select>
+  <div class="container">
+    <div class="links">
+      <div class="top">
+        <input id="search" type="text" placeholder="Search...">
+        <button id="search-button"><img src="./public/images/search.png" alt=""></button>
+      </div>
+      <div class="item">
+        <div class="regiment">
+          <div>
+            <select class="sort-select">
+              <option value="" selected disabled>SORT</option>
+              <option value="asc">A - Z</option>
+              <option value="desc">Z - A</option>
+            </select>
+          </div>
+
+          <div><button class="filter-btn" data-filter="all">ALL</button></div>
+          <div><button class="filter-btn" data-filter="scout">SCOUT</button></div>
+          <div><button class="filter-btn" data-filter="garrison">GARRISON</button></div>
+          <div><button class="filter-btn" data-filter="military">MILITARY</button></div>
+          <div><button class="filter-btn" data-filter="nobility">NOBILITY</button></div>
+          <div><button class="filter-btn" data-filter="marleyan">MARLEYAN</button></div>
+          <div><button class="filter-btn" data-filter="favourites">❤️ <span class="badge">0</span></button></div>
+        </div>
+      </div>
+      <div class="column-headers">
+        <p class="item-name">Name</p>
+        <p class="item-affiliation">Regiment</p>
+        <p class="item-occupation">Occupation</p>
+        <p class="item-gender">Gender</p>
+        <p class="item-status">Status</p>
+        <p class="item-species">Species</p>
       </div>
 
-      <div><button class="filter-btn" data-filter="all">ALL</button></div>
-      <div><button class="filter-btn" data-filter="scout">SCOUT</button></div>
-      <div><button class="filter-btn" data-filter="garrison">GARRISON</button></div>
-      <div><button class="filter-btn" data-filter="military">MILITARY</button></div>
-      <div><button class="filter-btn" data-filter="nobility">NOBILITY</button></div>
-      <div><button class="filter-btn" data-filter="marleyan">MARLEYAN</button></div>
-      <div><button class="filter-btn" data-filter="favourites">❤️ <span class="badge">0</span></button></div>
+      <div class="last"></div>
     </div>
-  </div>  
-  <div class="column-headers">
-    <p class="item-name">Name</p>
-    <p class="item-affiliation">Regiment</p>
-    <p class="item-occupation">Occupation</p>
-    <p class="item-gender">Gender</p>
-    <p class="item-status">Status</p>
-    <p class="item-species">Species</p>
-  </div>
- 
-  <div class="last"></div>
-</div>  
-      <div class="rechts">
-        <div class="main"> <div class="image-container"><p>CLICK ON A CHARACHTER FROM THE LIST</p></div>
+    <div class="rechts">
+      <div class="main">
+        <div class="image-container">
+          <p>CLICK ON A CHARACHTER FROM THE LIST</p>
+        </div>
         <div class="character-img">
-    <img src="./public/images/title.png" alt="characters">
-  </div>
-  <div class="character-info">
-    <h1 class="character-name"></h1>
-    <p class="character-desc"></p>
-  </div>
-  <div class="arrows">
-    <button class="arrow left"><img src="./public/images/controlBL.png" alt="prev"></button>
-    <button class="arrow right"><img src="./public/images/controlBR.png" alt="next"></button>
-  </div></div>
-        <div class="bottom-bar">
-  <div class="blok">
-    <span class="label">REGIMENT</span>
-    <span class="value"></span>
-  </div>
-  <div class="blok">
-    <span class="label">OCCUPATION</span>
-    <span class="value"></span>
-  </div>
-  <div class="blok">
-    <span class="label">GENDER</span>
-    <span class="value"></span>
-  </div>
-  <div class="blok">
-    <span class="label">ALIAS</span>
-    <span class="value"></span>
-  </div>
-  <div class="blok">
-    <span class="label">FAVORITE</span>
-    <span class="value"><button class="heart"><img src="./public/images/emptyheart.png" alt=""></button></span>
-  </div>
+          <img src="./public/images/title.png" alt="characters">
+        </div>
+        <div class="character-info">
+          <h1 class="character-name"></h1>
+          <p class="character-desc"></p>
+        </div>
+        <div class="arrows">
+          <button class="arrow left"><img src="./public/images/controlBL.png" alt="prev"></button>
+          <button class="arrow right"><img src="./public/images/controlBR.png" alt="next"></button>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <div class="blok">
+          <span class="label">REGIMENT</span>
+          <span class="value"></span>
+        </div>
+        <div class="blok">
+          <span class="label">OCCUPATION</span>
+          <span class="value"></span>
+        </div>
+        <div class="blok">
+          <span class="label">GENDER</span>
+          <span class="value"></span>
+        </div>
+        <div class="blok">
+          <span class="label">ALIAS</span>
+          <span class="value"></span>
+        </div>
+        <div class="blok">
+          <span class="label">FAVORITE</span>
+          <span class="value"><button class="heart"><img src="./public/images/emptyheart.png" alt=""></button></span>
+        </div>
 
-</div>
       </div>
     </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  </div>
+  <div class="modal" id="favorite-modal">
+    <div class="modal-content">
+      <span id="modal-close">&times;</span>
+      <p> You can only reach maximum 10 favorites!</p>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

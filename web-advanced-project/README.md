@@ -2,6 +2,7 @@
 
 Een interactieve single-page webapplicatie gebouwd met Vite, HTML, SCSS en JavaScript. De app haalt data op van de Attack on Titan API en toont personages met details.
 
+
 ## Functionaliteiten
 
 - Lijst van Attack on Titan personages geladen via de API

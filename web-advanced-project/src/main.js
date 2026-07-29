@@ -202,6 +202,7 @@ document.getElementById('search').addEventListener('input', (e) => {
 })
 
 
+
 function updateFavoritesBadge() {
   const favorites = JSON.parse(localStorage.getItem('favorites')) || []
   document.querySelector('.badge').textContent = favorites.length
@@ -215,10 +216,7 @@ document.querySelector('.heart').addEventListener('click', () => {
   if (favorites.includes(currentCharacter.id)) {
     favorites = favorites.filter((id) => id !== currentCharacter.id);
     document.querySelector(".heart img").src = "/images/emptyheart.png";
-  } else if (favorites.length >= 10) {
-    alert("You can only have 10 favorites.");
-  } else {
-    favorites.push(currentCharacter.id);
+  
     document.querySelector(".heart img").src = "/images/heartfilled.png";
   }
 
