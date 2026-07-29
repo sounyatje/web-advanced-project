@@ -215,6 +215,9 @@ document.querySelector('.heart').addEventListener('click', () => {
 
   localStorage.setItem('favorites', JSON.stringify(favorites))
   updateFavoritesBadge()
+  if (currentFilter === 'favourites') {
+    renderItems(getFilteredList('favourites'))
+  }
 
   
 })
