@@ -29,7 +29,7 @@ npm run dev
 |---|---|---|
 | Elementen selecteren | main.js - lijn 11, 37, 184 | querySelector, querySelectorAll, getElementById |
 | Elementen manipuleren | main.js - lijn 78,79,99,107 | textContent, innerHTML, classList |
-| Events aan elementen koppelen | main.js |
+| Events aan elementen koppelen | main.js - lijn 72, 200 | addEventListener |
 | Constanten | main.js |
 | Template literals | main.js |
 | Iteratie over arrays | main.js |
