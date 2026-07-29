@@ -82,8 +82,8 @@ function showCharacter(character) {
 
   let favorites = JSON.parse(localStorage.getItem('favorites')) || []
   document.querySelector('.heart img').src = favorites.includes(character.id)
-    ? './public/images/heartfilled.png'
-    : './public/images/emptyheart.png'
+    ? '/images/heartfilled.png'
+    : '/images/emptyheart.png'
 }
 
 function renderItems(characters) {
@@ -205,10 +205,10 @@ document.querySelector('.heart').addEventListener('click', () => {
 
   if (favorites.includes(currentCharacter.id)) {
     favorites = favorites.filter(id => id !== currentCharacter.id)
-    document.querySelector('.heart img').src = './public/images/emptyheart.png'
+    document.querySelector('.heart img').src = '/images/emptyheart.png'
   } else {
     favorites.push(currentCharacter.id)
-    document.querySelector('.heart img').src = './public/images/heartfilled.png'
+    document.querySelector('.heart img').src = '/images/heartfilled.png'
   }
 
   localStorage.setItem('favorites', JSON.stringify(favorites))
@@ -229,8 +229,8 @@ const stopBtn = document.getElementById('stop-music')
 
 function updateIcon() {
   stopBtn.src = bgMusic.paused
-    ? './public/images/mute.png'
-    : './public/images/volume.png'
+    ? '/images/mute.png'
+    : '/images/volume.png'
 }
 
 document.addEventListener(
