@@ -213,11 +213,13 @@ document.querySelector('.heart').addEventListener('click', () => {
   let favorites = JSON.parse(localStorage.getItem('favorites')) || []
 
   if (favorites.includes(currentCharacter.id)) {
-    favorites = favorites.filter(id => id !== currentCharacter.id)
-    document.querySelector('.heart img').src = '/images/emptyheart.png'
+    favorites = favorites.filter((id) => id !== currentCharacter.id);
+    document.querySelector(".heart img").src = "/images/emptyheart.png";
+  } else if (favorites.length >= 10) {
+    alert("You can only have 10 favorites.");
   } else {
-    favorites.push(currentCharacter.id)
-    document.querySelector('.heart img').src = '/images/heartfilled.png'
+    favorites.push(currentCharacter.id);
+    document.querySelector(".heart img").src = "/images/heartfilled.png";
   }
 
   localStorage.setItem('favorites', JSON.stringify(favorites))
