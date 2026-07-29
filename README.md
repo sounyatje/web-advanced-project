@@ -6,12 +6,11 @@ Een interactieve single-page webapplicatie gebouwd met Vite, HTML, SCSS en JavaS
 
 - Lijst van Attack on Titan personages geladen via de API
 - Klik op een personage om details te zien (regiment, beroep, gender, alias)
-- Zoekfunctie om personages te filteren op naam
-- Filter knoppen: ALL, SCOUT, GARRISON, MILITARY, NOBILITY, MARLEYAN, FAVOURITES
+- Zoekfunctie om personages te filteren op 
 - Sorteren aan de hand van een select (A - Z EN Z - A)
+- Filter knoppen: ALL, SCOUT, GARRISON, MILITARY, NOBILITY, MARLEYAN, FAVOURITES
 - Pijlen met actieve/inactieve afbeeldingen bij klikken
 - Hartje om personages als favoriet te markeren
-  
 ## Gebruikte API
 
 - [Attack on Titan API](https://api.attackontitanapi.com)
