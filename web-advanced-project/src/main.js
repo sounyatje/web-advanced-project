@@ -6,7 +6,6 @@
 //TODO: vercel knopjes werken niet 
 //TODO: readme + screenshots
 //TODO: Lijnnummers bij technische vereisten nog invullen
-//TODO: firefox is css anders
 
 import './style.scss'
 
@@ -28,18 +27,18 @@ const rowObserver = new IntersectionObserver((entries, observer) => {
   threshold: 0.1
 })
 
-arrowleft.addEventListener('mousedown', () => { arrowleft.src = './public/images/controlLR.png' })
+arrowleft.addEventListener('mousedown', () => { arrowleft.src = '/images/controlLR.png' })
 arrowleft.addEventListener('mouseup', () => { arrowleft.src = leftOriginal })
 arrowleft.addEventListener('mouseleave', () => { arrowleft.src = leftOriginal })
 
-arrowright.addEventListener('mousedown', () => { arrowright.src = './public/images/controlRR.png' })
+arrowright.addEventListener('mousedown', () => { arrowright.src = '/images/controlRR.png' })
 arrowright.addEventListener('mouseup', () => { arrowright.src = rightOriginal })
 arrowright.addEventListener('mouseleave', () => { arrowright.src = rightOriginal })
 
 let searchImg = document.querySelector('#search-button img')
-searchImg.addEventListener('mousedown', () => { searchImg.src = './public/images/searchred.png' })
-searchImg.addEventListener('mouseup', () => { searchImg.src = './public/images/search.png' })
-searchImg.addEventListener('mouseleave', () => { searchImg.src = './public/images/search.png' })
+searchImg.addEventListener('mousedown', () => { searchImg.src = '/images/searchred.png' })
+searchImg.addEventListener('mouseup', () => { searchImg.src = '/images/search.png' })
+searchImg.addEventListener('mouseleave', () => { searchImg.src = '/images/search.png' })
 
 let currentCharacter = null
 let currentList = []
