@@ -132,7 +132,7 @@ async function loadCharacters() {
     )
 
     const data = await response.json()
-
+    
     characters.push(...data.results)
   }
 
@@ -232,9 +232,7 @@ function updateIcon() {
     : '/images/volume.png'
 }
 
-document.addEventListener(
-  "click",
-  () => {
+document.addEventListener( "click", () => {
     bgMusic.muted = false;
     bgMusic.play();
     updateIcon();
