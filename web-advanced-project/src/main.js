@@ -3,7 +3,6 @@
 //https://codepen.io/
 //https://api.attackontitanapi.com/characters
 
-//TODO: vercel knopjes werken niet 
 //TODO: readme + screenshots
 //TODO: Lijnnummers bij technische vereisten nog invullen
 
