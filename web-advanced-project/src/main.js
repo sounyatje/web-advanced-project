@@ -3,8 +3,7 @@
 //https://codepen.io/
 //https://api.attackontitanapi.com/characters
 
-//TODO: readme + screenshots
-//TODO: formulier toevoegen
+//TODO: readme aanpassen want lijnen zijn verschoven
 
 import './style.scss'
 
@@ -201,7 +200,13 @@ document.getElementById('search').addEventListener('input', (e) => {
   })
 })
 
+const MAX_FAVORITES = 10
+const favoriteModal = document.querySelector('#favorite-modal')
+const modalClose = document.querySelector('#modal-close')
 
+modalClose.addEventListener('click', () => {
+  favoriteModal.classList.remove('show')
+})
 
 function updateFavoritesBadge() {
   const favorites = JSON.parse(localStorage.getItem('favorites')) || []
@@ -218,7 +223,10 @@ document.querySelector('.heart').addEventListener('click', () => {
     document.querySelector(".heart img").src = "/images/emptyheart.png";
   
     document.querySelector(".heart img").src = "/images/heartfilled.png";
-  }
+  }else if (favorites.length >= MAX_FAVORITES) {
+    favoriteModal.classList.add("show");
+  } else {
+    favorites.push(currentCharacter.id);
 
   localStorage.setItem('favorites', JSON.stringify(favorites))
   updateFavoritesBadge()
@@ -226,7 +234,7 @@ document.querySelector('.heart').addEventListener('click', () => {
     renderItems(getFilteredList('favourites'))
     
   }
-
+  }
   
 })
 

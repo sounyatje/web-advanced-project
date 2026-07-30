@@ -469,7 +469,24 @@ height: 200px;
   
 }
 
+.modal.show {
+  display: flex;
+}
 
+.modal-content {
+  position: relative;
+  padding: 25px;
+  background: #111;
+  border: 1px solid #fff;
+  color: white;
+}
+
+#modal-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
 
 @media (max-width: 768px) {
 
